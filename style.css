@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+/* THEME VARIABLES (Dark + Light) */
+:root {
+  --bg-color: #1e2228;
+  --text-color: white;
+  --input-bg: #2a2f36;
+  --card-bg: #2a2f36;
+  --btn-bg: linear-gradient(to right, #ff758c, #ff7eb3);
+  --btn-hover-bg: linear-gradient(to right, #ff4e73, #ff6c9b);
+  --status-pending: #ffc107;
+  --status-done: #4caf50;
+  --close-bg: #d32f2f;
+  --close-hover: #b71c1c;
+}
+
+.light-mode {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --input-bg: #ffffff;
+  --card-bg: #fefefe;
+  --btn-bg: linear-gradient(to right, #2196f3, #03a9f4);
+  --btn-hover-bg: linear-gradient(to right, #1976d2, #0288d1);
+  --status-pending: #ff9800;
+  --status-done: #388e3c;
+  --close-bg: #f44336;
+  --close-hover: #c62828;
+}
+
+/* BASIC SETUP*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.main-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+/* TODO WRAPPER*/
+ .ta-wrapper { background: var(--card-bg);
+  color: var(--text-color);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  min-height: 300px;
+  width: 600px;
+}
+
+.heading h1 {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* INPUT AREA*/
+.input-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.input-wrapper input {
+  outline: none;
+  border: none;
+  background: var(--input-bg);
+  padding: 12px;
+  color: var(--text-color);
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: inset 0 0 5px #00000033;
+}
+
+.input-wrapper button {
+  background: var(--btn-bg);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.input-wrapper button:hover {
+  background: var(--btn-hover-bg);
+}
+
+/* TODO ITEMS*/
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.todo-item input.text {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 16px;
+  width: 300px;
+}
+
+.todo-item input.text.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.action-items {
+  display: flex;
+  align-items: center;
+}
+
+/* ICON BUTTONS*/
+.todo-item i {
+  color: white;
+  background: #ff758c;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-left: 5px;
+}
+
+.todo-item i:hover {
+  background: #ff4e73;
+  transform: scale(1.1);
+}
+
+.fa-x {
+  padding: 6px 8px !important;
+}
+
+/* STATUS BADGE*/
+.status {
+  margin-left: 20px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: var(--status-pending);
+  color: black;
+}
+
+.completed {
+  background-color: var(--status-done);
+  color: white;
+}
+
+/* CLOSE BUTTON (After Completion) */
+.close-btn {
+  background: var(--close-bg);
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.close-btn:hover {
+  background: var(--close-hover);
+}
+
+/* THEME TOGGLE BUTTON*/
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+#theme-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.light-mode #theme-btn {
+  color: #333;
+}
